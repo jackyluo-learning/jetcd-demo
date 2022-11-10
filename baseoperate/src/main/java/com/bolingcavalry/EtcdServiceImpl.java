@@ -24,7 +24,7 @@ public class EtcdServiceImpl implements EtcdService {
 
     private String endpoints;
 
-    private Object lock = new Object();
+    private final Object lock = new Object();
 
     public EtcdServiceImpl(String endpoints) {
         super();

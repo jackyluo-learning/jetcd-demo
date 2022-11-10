@@ -1,0 +1,7 @@
+# Project exclude paths
+/.gradle/
+/baseoperate/build/
+/baseoperate/build/classes/java/main/
+/baseoperate/build/classes/java/test/
+/helloworld/build/
+/helloworld/build/classes/java/main/

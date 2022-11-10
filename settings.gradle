@@ -1,4 +1,6 @@
 rootProject.name = 'jetcd-demo'
 include 'helloworld'
 include 'baseoperate'
+include 'common'
+include 'advancedoperate'
 
