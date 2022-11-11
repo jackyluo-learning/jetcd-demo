@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Implementation-Title: common
+Build-Date: 2022-11-10
+Built-OS: Windows 10
+Implementation-Version: 1.0-SNAPSHOT
+Built-By: travis
+Specification-Vendor: Will Zhao
+Specification-Title: common
+Build-Time: 17:19:38.665+0800
+Created-By: 1.8.0_341 (Oracle Corporation 25.341-b10)
+Specification-Version: 1.0-SNAPSHOT
+Implementation-Vendor: Will Zhao
+

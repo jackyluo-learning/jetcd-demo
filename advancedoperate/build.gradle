@@ -1,0 +1,49 @@
+plugins {
+    id 'org.springframework.boot'
+}
+
+// 用了插件org.springframework.boot之后，jar task会失效，可用bootJar取代
+bootJar {
+    archiveBaseName = project.name
+    archiveVersion = project.version
+
+    manifest {
+        attributes(
+                'Created-By': "${System.properties['java.version']} (${System.properties['java.vendor']} ${System.properties['java.vm.version']})".toString(),
+                'Built-By': 'travis',
+                'Build-Date': buildDate,
+                'Build-Time': buildTime,
+                'Built-OS': "${System.properties['os.name']}",
+                'Specification-Title': project.name,
+                'Specification-Version': projectVersion,
+                'Specification-Vendor': 'Will Zhao',
+                'Implementation-Title': project.name,
+                'Implementation-Version': projectVersion,
+                'Implementation-Vendor': 'Will Zhao'
+        )
+    }
+}
+
+group 'com.bolingcavalry'
+version '1.0-SNAPSHOT'
+
+dependencies {
+    annotationProcessor 'org.projectlombok:lombok'
+    implementation 'org.projectlombok:lombok'
+    implementation 'commons-collections:commons-collections'
+    implementation 'org.apache.commons:commons-lang3'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'io.etcd:jetcd-core'
+    testImplementation('org.junit.jupiter:junit-jupiter')
+    implementation 'org.junit.jupiter:junit-jupiter-engine'
+    implementation project(":baseoperate")
+    implementation project(":common")
+}
+
+configurations {
+    all*.exclude group: 'org.slf4j', module: 'slf4j-log4j12'
+}
+
+test {
+    useJUnitPlatform()
+}
